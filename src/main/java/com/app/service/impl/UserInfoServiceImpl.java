@@ -1,5 +1,8 @@
 package com.app.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -57,6 +60,16 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public List<UserInfoEntity> findAll() {
         return userInfoMapper.findAll();
+    }
+
+    @Override
+    public PageInfo<UserInfoEntity> findAllByPage(Integer pageNum, Integer pageSize) {
+
+        PageHelper.startPage(pageNum, pageSize);
+        Page<UserInfoEntity> all = userInfoMapper.findAllByPage();
+        PageInfo<UserInfoEntity> of = PageInfo.of(all);
+
+        return of;
     }
 
 }

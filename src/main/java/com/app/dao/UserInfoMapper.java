@@ -1,6 +1,7 @@
 package com.app.dao;
 
 import com.app.entity.UserInfoEntity;
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -30,4 +31,7 @@ public interface UserInfoMapper {
     int updateByPrimaryKey(UserInfoEntity record);
 
     List<UserInfoEntity> findAll();
+
+    Page<UserInfoEntity> findAllByPage();
+
 }

@@ -1,6 +1,8 @@
 package com.app.service;
 
 import com.app.entity.UserInfoEntity;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -29,4 +31,5 @@ public interface UserInfoService{
 
         List<UserInfoEntity> findAll();
 
-    }
+    PageInfo<UserInfoEntity> findAllByPage(Integer pageNum, Integer pageSize);
+}

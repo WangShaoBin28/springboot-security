@@ -23,6 +23,11 @@
         <include refid="Base_Column_List"/>
         from user_info
     </select>
+    <select id="findAllByPage" resultType="com.app.entity.UserInfoEntity">
+        select
+        <include refid="Base_Column_List"/>
+        from user_info
+    </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
    
     delete from user_info
